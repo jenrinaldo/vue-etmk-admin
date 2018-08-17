@@ -1,0 +1,75 @@
+.menu-hamburger {
+    position: relative;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+	background: transparent;
+}
+
+.menu-hamburger::before,
+.menu-hamburger::after,
+.menu-hamburger span {
+	background: #C3C6D3;
+}
+
+.menu-hamburger::before,
+.menu-hamburger::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	pointer-events: none;
+	-webkit-transition: -webkit-transform 0.25s;
+    -moz-transition: -moz-transform 0.25s;
+    -o-transition: -o-transform 0.25s;
+    transition: -ms-transform 0.25s;
+	transition: transform 0.25s;
+	-webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.menu-hamburger span {
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 2px;
+	text-indent: 200%;
+	-webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+
+.menu-hamburger::before {
+	-webkit-transform: translate3d(0, -7px, 0) scale3d(0.75, 1, 1);
+    -moz-transform: translate3d(0, -7px, 0) scale3d(0.75, 1, 1);
+	transform: translate3d(0, -7px, 0) scale3d(0.75, 1, 1);
+}
+
+.menu-hamburger::after {
+	-webkit-transform: translate3d(0, 7px, 0) scale3d(0.75, 1, 1);
+    -moz-transform: translate3d(0, 7px, 0) scale3d(0.75, 1, 1);
+	transform: translate3d(0, 7px, 0) scale3d(0.75, 1, 1);
+}
+
+.menu--open .menu-hamburger span {
+	opacity: 0;
+}
+
+.menu--open .menu-hamburger::before {
+	-webkit-transform: rotate3d(0, 0, 1, 45deg);
+    -moz-transform: rotate3d(0, 0, 1, 45deg);
+	transform: rotate3d(0, 0, 1, 45deg);
+}
+
+.menu--open .menu-hamburger::after {
+	-webkit-transform: rotate3d(0, 0, 1, -45deg);
+    -moz-transform: rotate3d(0, 0, 1, -45deg);
+	transform: rotate3d(0, 0, 1, -45deg);
+}
